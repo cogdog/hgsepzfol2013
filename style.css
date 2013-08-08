@@ -1,0 +1,100 @@
+/*
+Theme Name: 	FOL PZ
+Theme URI:      http://futureoflearningpz.org/
+Description:    Child theme of Twenty Eleven for hgsepzfol
+Author:         Alan Levine
+Author URI:     http://cogdogblog.com
+Template:       twentyeleven
+Version:        0.1.0
+*/
+ 
+@import url(../twentyeleven/style.css);
+
+
+.pcount {	
+	margin-top:0;
+	text-align: center;
+	font-size: 125%;
+	font-variant: small-caps;
+}
+
+p.more {
+
+	padding: 0.5em 1em;
+	text-align:right;
+	font-style: italic;
+	background-color: #f4f4f4;
+	
+
+}
+
+article.intro .entry-title {
+	display: block;
+}
+
+
+#branding .only-search #s {
+	background-color: rgba(102, 102, 102, 0.39);
+	border-color: rgba(0, 0, 0, 0.18);
+	color: rgba(34, 34, 34, 0.94);
+}
+
+
+/* Image borders */
+img[class*="align"],
+img[class*="wp-image-"],
+#content .gallery .gallery-icon img {/* Removed fancy borders to all WordPress-added images  */
+	border: none;
+	padding: 6px;
+}
+
+/*  ----- for page navi ------------------------- */
+
+.page_navi {
+    text-align: center;
+}
+ 
+.page_navi li {
+    display: inline;
+    list-style: none;
+}
+ 
+.page_navi li.current span {
+    color: #eee;
+    font-weight: bold;
+    display: inline-block;
+    padding: 3px 7px;
+    background: #000;
+    border: solid 1px #000;
+}
+ 
+.page_navi li a {
+    color: #333;
+    padding: 3px 7px;
+    background: #eee;
+    display: inline-block;
+    border: solid 1px #999;
+    text-decoration: none;
+}
+ 
+.page_navi li a:hover {
+    color: #fff;
+    background: #a9a9a9;
+}
+ 
+.page_navi li.page_nums span {
+    color: #fff;
+    padding: 3px 7px;
+    background: #666;
+    display: inline-block;
+    border: solid 1px #333;
+}
+
+
+@media handheld, only screen and (max-width: 767px) {
+
+	#searchform {
+		display:none;
+	}
+}
+
