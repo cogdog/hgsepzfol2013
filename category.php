@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Category Archive pages.
+ * The template for displaying Category Archive pages, added features for hgsepzfol categories
  *
  * @package WordPress
  * @subpackage Twenty_Eleven
@@ -17,38 +17,27 @@ get_header(); ?>
 			
 			$current_category = single_cat_title( "", false );  // current category name
 			$current_category_id = get_cat_ID( $current_category ); // current category id
-			$post_count = get_post_count($current_category_id);
+			$post_count = get_post_count($current_category_id); // number of posts in this category
 					
 			?>
 			
 			<?php if ( have_posts() ) : ?>
 			
-			
+				<!-- use paged navigation -->
 				<?php if ( function_exists( 'page_navi' ) ) page_navi(); ?>					
 					
+					
+				<!-- echo a label for categories, this is ugly to hardcode categories to exclude, those are aggregation ones -->
 				<?php if (  $post_count > 0) : ?>
 					<div class="pcount">collecting <strong><?php echo $post_count?></strong> items in the <strong><?php echo $current_category ?></strong>   <?php if ( !( in_array( $current_category_id, array( 1, 4, 5, 6, 11 ) ) ) ) echo ' Category';?></div>
 				<?php endif?>
-
-				<!--
-				<header class="page-header">
-					<h1 class="page-title"><?php
-						printf( __( 'Category Archives: %s', 'twentyeleven' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-					?></h1>
-
-					<?php
-						$category_description = category_description();
-						if ( ! empty( $category_description ) )
-							echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
-					?>
-				</header>
-				-->
 				
 				<?php twentyeleven_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					
+					<!-- edit link for admins so they cane categorize syndicated posts -->
 					<?php edit_post_link( __( 'Edit/Categorize', 'twentyeleven' ), '<div class="edit-link" style="text-align:right">', '</div>' ); ?>
 					
 					<?php

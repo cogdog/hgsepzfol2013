@@ -17,4 +17,4 @@ This theme would be installed in your wp-content/themes directory, along side a 
 
 CODE
 ----
-https://github.com/cogdog/hgsepzfol
+http://cogdogblog.com/2013/08/14/future-of-learning-site/
